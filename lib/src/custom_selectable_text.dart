@@ -31,8 +31,7 @@ class CustomSelectableText extends SelectableText {
     super.onSelectionChanged,
   }) : super(
             key: key,
-            selectionControls: CustomTextSelectionControls(
-                items: items));
+            selectionControls: CustomTextSelectionControls(items: items));
 
   /// Creates an array of [CustomSelectableTextItem].
   final List<CustomSelectableTextItem> items;

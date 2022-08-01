@@ -9,3 +9,6 @@ Fix onPressed parameter
 
 ## 0.1.3
 Fix missing asset
+
+## 0.1.4
+Remove unnecessary variable

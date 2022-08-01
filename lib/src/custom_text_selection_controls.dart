@@ -8,9 +8,9 @@ class CustomTextSelectionControls extends MaterialTextSelectionControls {
   static const double _kToolbarContentDistanceBelow = 20.0;
   static const double _kToolbarContentDistance = 8.0;
 
-  CustomTextSelectionControls(
-      {required this.items,
-      });
+  CustomTextSelectionControls({
+    required this.items,
+  });
 
   final List<CustomSelectableTextItem> items;
 
@@ -44,12 +44,6 @@ class CustomTextSelectionControls extends MaterialTextSelectionControls {
     final selectionText = delegate.textEditingValue.text.substring(
         delegate.textEditingValue.selection.start,
         delegate.textEditingValue.selection.end);
-
-    final Map<SelectionTriggeredType, SelectionChangedCause> triggeredType = {
-      SelectionTriggeredType.doubleTap: SelectionChangedCause.doubleTap,
-      SelectionTriggeredType.tap: SelectionChangedCause.tap,
-      SelectionTriggeredType.longPress: SelectionChangedCause.longPress,
-    };
 
     return MyTextSelectionToolbar(
       anchorAbove: anchorAbove,
@@ -168,7 +162,7 @@ class MyTextSelectionToolbarState extends State<MyTextSelectionToolbar> {
             padding: TextSelectionToolbarTextButton.getPadding(
                 i, widget.items.length),
             onPressed: () {
-              if (widget.items[i].onPressed != null){
+              if (widget.items[i].onPressed != null) {
                 widget.items[i].onPressed!(widget.selectionText);
               }
               selectorItem[widget.items[i].controlType]!();

@@ -1,6 +1,6 @@
 name: custom_selectable_text
 description: A widget like selectable text but with additional customs like share. It can do Copy, select all, cut and paste as well.
-version: 0.1.3
+version: 0.1.4
 repository: https://github.com/radikz/custom_selectable_text
 
 environment:
