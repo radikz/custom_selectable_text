@@ -3,8 +3,9 @@
 This package helps you to select text and perform utilize functionalities like copy. You can also perform custom selectable like share text.
 
 ## Screenshot
-![custom_selectable_text](https://raw.githubusercontent.com/radikz/custom_selectable_text/master/screenshots/ss.png)
-
+<p align="center">
+  <img width="460"  src="https://raw.githubusercontent.com/radikz/custom_selectable_text/master/screenshots/ss.png">
+</p>
 
 ## Usage
 ```dart
