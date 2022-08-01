@@ -6,3 +6,6 @@ Fix missing screenshot
 
 ## 0.1.2
 Fix onPressed parameter
+
+## 0.1.3
+Fix missing asset

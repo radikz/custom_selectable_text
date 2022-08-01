@@ -3,7 +3,7 @@
 This package helps you to select text and perform utilize functionalities like copy. You can also perform custom selectable like share text.
 
 ## Screenshot
-![custom_selectable_text](https://github.com/radikz/custom_selectable_text/blob/master/screenshots/ss.png)
+![custom_selectable_text](https://raw.githubusercontent.com/radikz/custom_selectable_text/master/screenshots/ss.png)
 
 
 ## Usage
