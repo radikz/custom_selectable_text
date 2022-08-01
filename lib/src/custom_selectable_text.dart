@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import '../custom_selectable_text.dart';
 import 'custom_text_selection_controls.dart';
-import 'package:flutter/material.dart';
 
 /// Creates a selectable text.
 class CustomSelectableText extends SelectableText {
@@ -30,7 +31,8 @@ class CustomSelectableText extends SelectableText {
     super.onSelectionChanged,
   }) : super(
             key: key,
-            selectionControls: CustomTextSelectionControls(items: items));
+            selectionControls: CustomTextSelectionControls(
+                items: items));
 
   /// Creates an array of [CustomSelectableTextItem].
   final List<CustomSelectableTextItem> items;

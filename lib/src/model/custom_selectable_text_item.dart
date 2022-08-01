@@ -1,6 +1,9 @@
 /// Control type to manipulate the selection of text
 enum SelectionControlType { copy, selectAll, cut, paste, other }
 
+/// Indicates how to triggered the change in selected text
+enum SelectionTriggeredType { doubleTap, tap, longPress }
+
 class CustomSelectableTextItem {
   /// The text to display.
   final String? label;
