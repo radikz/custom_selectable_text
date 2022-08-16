@@ -1,8 +1,7 @@
+import 'package:flutter/widgets.dart';
+
 /// Control type to manipulate the selection of text
 enum SelectionControlType { copy, selectAll, cut, paste, other }
-
-/// Indicates how to triggered the change in selected text
-enum SelectionTriggeredType { doubleTap, tap, longPress }
 
 class CustomSelectableTextItem {
   /// The text to display.
@@ -15,6 +14,16 @@ class CustomSelectableTextItem {
   /// Control type to manipulate the selection of text
   final SelectionControlType controlType;
 
+  final Widget? icon;
+
+  CustomSelectableTextItem._(
+      {this.label, this.onPressed, required this.controlType, this.icon})
+      : assert(
+            label != null ||
+                controlType != SelectionControlType.other ||
+                icon != null,
+            "Label is required when the controlType is SelectionControlType.other");
+
   /// Creates a selectable text item
   ///
   /// [label] is allowed to be null if [SelectionControlType] is
@@ -25,9 +34,17 @@ class CustomSelectableTextItem {
   /// [MaterialLocalizations]
   ///
   CustomSelectableTextItem({
-    this.label,
-    this.onPressed,
-    required this.controlType,
-  }) : assert(label != null || controlType != SelectionControlType.other,
-            "Label is required when the controlType is SelectionControlType.other");
+    String? label,
+    Function(String)? onPressed,
+    required SelectionControlType controlType,
+  }) : this._(label: label, onPressed: onPressed, controlType: controlType);
+
+  /// Creates a selectable text item with icon
+  ///
+  /// Typically the icon is an Icon or an ImageIcon widget
+  CustomSelectableTextItem.icon(
+      {Function(String)? onPressed,
+      required Widget icon,
+      SelectionControlType controlType = SelectionControlType.other})
+      : this._(controlType: controlType, onPressed: onPressed, icon: icon);
 }

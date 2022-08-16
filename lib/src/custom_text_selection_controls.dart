@@ -167,9 +167,11 @@ class MyTextSelectionToolbarState extends State<MyTextSelectionToolbar> {
               }
               selectorItem[widget.items[i].controlType]!();
             },
-            child: Text(widget.items[i].label ??
-                selectorLabel[widget.items[i].controlType]!),
-          )
+            child: widget.items[i].icon != null
+                ? widget.items[i].icon!
+                : Text(widget.items[i].label ??
+                    selectorLabel[widget.items[i].controlType]!),
+          ),
       ],
     );
   }

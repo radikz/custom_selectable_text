@@ -38,6 +38,14 @@ class HomePage extends StatelessWidget {
                     content: Text("$text is successfully shared"),
                   ));
                 }),
+            CustomSelectableTextItem.icon(
+              icon: const Icon(Icons.search),
+              onPressed: (text){
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text("Searched $text text"),
+                ));
+              }
+            ),
           ],
         ),
       ),
