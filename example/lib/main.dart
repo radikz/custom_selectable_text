@@ -39,13 +39,12 @@ class HomePage extends StatelessWidget {
                   ));
                 }),
             CustomSelectableTextItem.icon(
-              icon: const Icon(Icons.search),
-              onPressed: (text){
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text("Searched $text text"),
-                ));
-              }
-            ),
+                icon: const Icon(Icons.search),
+                onPressed: (text) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text("Searched $text text"),
+                  ));
+                }),
           ],
         ),
       ),

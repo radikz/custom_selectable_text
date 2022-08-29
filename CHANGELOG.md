@@ -15,3 +15,6 @@ Remove unnecessary variable
 
 ## 0.2.0
 Add feature selectable text item icon
+
+## 0.2.1
+Add doc comments

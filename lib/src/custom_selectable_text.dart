@@ -4,10 +4,13 @@ import '../custom_selectable_text.dart';
 import 'custom_text_selection_controls.dart';
 
 /// Creates a selectable text.
+///
+/// [data] is required
+///
+/// The [showCursor], [autofocus], [dragStartBehavior], [selectionHeightStyle],
+/// [selectionWidthStyle] and [data] parameters must not be null. If specified,
+/// the [maxLines] argument must be greater than zero.
 class CustomSelectableText extends SelectableText {
-  /// Creates a selectable text.
-  ///
-  /// [data] is required
   CustomSelectableText(
     super.data, {
     Key? key,
@@ -23,7 +26,6 @@ class CustomSelectableText extends SelectableText {
     super.cursorHeight,
     super.cursorRadius,
     super.cursorColor,
-    super.onTap,
     super.scrollPhysics,
     super.semanticsLabel,
     super.textHeightBehavior,
