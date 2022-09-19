@@ -24,25 +24,26 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: CustomSelectableText(
-          "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+          "Lorem Ipsum",
           textAlign: TextAlign.center,
           items: [
-            CustomSelectableTextItem(controlType: SelectionControlType.copy),
-            CustomSelectableTextItem(
-                controlType: SelectionControlType.selectAll),
-            CustomSelectableTextItem(
-                label: "Share",
-                controlType: SelectionControlType.other,
+            CustomSelectableTextItem.icon(
+                icon: const Icon(Icons.copy),
+                controlType: SelectionControlType.copy,
                 onPressed: (text) {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("$text is successfully shared"),
+                    content: Text("Copied $text text"),
                   ));
                 }),
             CustomSelectableTextItem.icon(
-                icon: const Icon(Icons.search),
+              controlType: SelectionControlType.selectAll,
+              icon: const Icon(Icons.select_all),
+            ),
+            CustomSelectableTextItem.icon(
+                icon: const Icon(Icons.share),
                 onPressed: (text) {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text("Searched $text text"),
+                    content: Text("Shared $text text"),
                   ));
                 }),
           ],
