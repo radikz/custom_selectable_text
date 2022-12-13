@@ -165,14 +165,30 @@ class MyTextSelectionToolbarState extends State<MyTextSelectionToolbar> {
               if (widget.items[i].onPressed != null) {
                 widget.items[i].onPressed!(widget.selectionText);
               }
-              selectorItem[widget.items[i].controlType]!();
+              if (selectorItem[widget.items[i].controlType] != null) {
+                selectorItem[widget.items[i].controlType]!();
+              }
             },
-            child: widget.items[i].icon != null
-                ? widget.items[i].icon!
-                : Text(widget.items[i].label ??
-                    selectorLabel[widget.items[i].controlType]!),
+            child: _child(
+                popupMenuButton: widget.items[i].popupMenuButton,
+                icon: widget.items[i].icon,
+                text: Text(widget.items[i].label ??
+                    selectorLabel[widget.items[i].controlType] ??
+                    "")),
           ),
       ],
     );
+  }
+
+  Widget _child(
+      {required Widget? popupMenuButton,
+      required Widget? icon,
+      required Widget text}) {
+    if (popupMenuButton != null) {
+      return popupMenuButton;
+    } else if (icon != null) {
+      return icon;
+    }
+    return text;
   }
 }

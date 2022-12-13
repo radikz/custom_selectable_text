@@ -1,5 +1,8 @@
+#0.4.0
+- feat: introduce `CustomSelectableTextItem.popUpMenuButton`
+
 # 0.3.0
-- feat: introduce `CustomSelectable.rich`
+- feat: introduce `CustomSelectableTextItem.rich`
 
 # 0.2.1
 - Add doc comments

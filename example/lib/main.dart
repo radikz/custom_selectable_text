@@ -46,6 +46,17 @@ class HomePage extends StatelessWidget {
                     content: Text("Shared $text text"),
                   ));
                 }),
+            CustomSelectableTextItem.popUpMenuButton(
+                child: PopupMenuButton(
+              itemBuilder: (context) => [
+                const PopupMenuItem(
+                  child: Text("Text 1"),
+                ),
+                const PopupMenuItem(
+                  child: Text("Text 2"),
+                ),
+              ],
+            )),
           ],
         ),
       ),

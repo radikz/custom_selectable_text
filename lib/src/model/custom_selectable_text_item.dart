@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 /// Control type to manipulate the selection of text
 enum SelectionControlType { copy, selectAll, cut, paste, other }
@@ -16,12 +16,20 @@ class CustomSelectableTextItem {
 
   final Widget? icon;
 
+  /// Display popupMenuButton within selectable text item
+  final PopupMenuButton? popupMenuButton;
+
   CustomSelectableTextItem._(
-      {this.label, this.onPressed, required this.controlType, this.icon})
+      {this.label,
+      this.onPressed,
+      required this.controlType,
+      this.icon,
+      this.popupMenuButton})
       : assert(
             label != null ||
                 controlType != SelectionControlType.other ||
-                icon != null,
+                icon != null ||
+                popupMenuButton != null,
             "Label is required when the controlType is SelectionControlType.other");
 
   /// Creates a selectable text item
@@ -41,10 +49,14 @@ class CustomSelectableTextItem {
 
   /// Creates a selectable text item with icon
   ///
-  /// Typically the icon is an Icon or an ImageIcon widget
+  /// Typically the icon is an [Icon] or an [ImageIcon] widget
   CustomSelectableTextItem.icon(
       {Function(String)? onPressed,
       required Widget icon,
       SelectionControlType controlType = SelectionControlType.other})
       : this._(controlType: controlType, onPressed: onPressed, icon: icon);
+
+  /// Creates a selectable text item with [PopupMenuButton]
+  CustomSelectableTextItem.popUpMenuButton({PopupMenuButton? child})
+      : this._(controlType: SelectionControlType.other, popupMenuButton: child);
 }
